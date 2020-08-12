@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react';
 import {
   CDropdown,
   CDropdownItem,
   CDropdownMenu,
   CDropdownToggle,
-  CImg
+  CImg,
+  CModal,
+  CModalBody,
+  CModalFooter,
+  CModalHeader,
+  CModalTitle,
+  CButton
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
 const TheHeaderDropdown = () => {
+  const [modal, setModal] = useState(false)
+  const logOut = () => {
+    localStorage.clear();
+    setModal(false);
+    window.location.reload();
+  }
   return (
     <CDropdown
       inNav
@@ -31,16 +43,34 @@ const TheHeaderDropdown = () => {
           color="light"
           className="text-center"
         >
-          <strong>Settings</strong>
+          <strong>Account</strong>
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-user" className="mfe-2" />Profile
         </CDropdownItem>
-        <CDropdownItem>
-          <CIcon name="cil-settings" className="mfe-2" />
-          Settings
+        <CDropdownItem onClick={() => setModal(true)}>
+          <CIcon name="cil-lock-locked" className="mfe-2" />
+          Logout
         </CDropdownItem>
       </CDropdownMenu>
+      <CModal
+        show={modal}
+        onClose={setModal}
+      >
+        <CModalHeader closeButton>
+          <CModalTitle>Logout</CModalTitle>
+        </CModalHeader>
+        <CModalBody>
+          Do you want to log out.
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="primary" onClick={() => logOut()}>Log out</CButton>{' '}
+          <CButton
+            color="secondary"
+            onClick={() => setModal(false)}
+          >Cancel</CButton>
+        </CModalFooter>
+      </CModal>
     </CDropdown>
   )
 }
