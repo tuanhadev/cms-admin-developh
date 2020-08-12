@@ -1,0 +1,2 @@
+(this["webpackJsonpcms-admin-developh"]=this["webpackJsonpcms-admin-developh"]||[]).push([[6],{663:function(e,n,t){"use strict";t.r(n);var a=t(375),c=t(1),o=t.n(c),r=t(19),s=Boolean(localStorage.getItem("access_token"));n.default=function(e){var n=e.component,t=Object(a.a)(e,["component"]);return o.a.createElement(r.b,Object.assign({},t,{render:function(e){return!1===s?o.a.createElement(r.a,{to:"/login"}):o.a.createElement(n,e)}}))}}}]);
+//# sourceMappingURL=6.98034331.chunk.js.map
