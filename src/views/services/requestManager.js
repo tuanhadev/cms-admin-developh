@@ -10,7 +10,7 @@ export default class ManagerRequest {
         return instance;
     }
 
-    async startRequest(method, url, body) {
+    async startRequest(method, url, body, params = '') {
         try {
             const access_token = localStorage.getItem("access_token") || '';
             axios.defaults.headers.common['Content-Type'] = "application/json";
@@ -18,8 +18,9 @@ export default class ManagerRequest {
                 method: method,
                 url: url,
                 data: body,
-                params: {
-                    access_token
+                params,
+                headers: {
+                    'authorization': `Bearer ${access_token}`
                 }
             })
             return response.data;

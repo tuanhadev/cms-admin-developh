@@ -6,5 +6,6 @@ export default {
         POST: 'post',
         PUT: 'put',
         DELETE: 'delete'
-    }
+    },
+    limit: 10
 }

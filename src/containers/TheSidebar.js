@@ -24,7 +24,6 @@ const TheSidebar = () => {
     <CSidebar
       show={show}
       onShowChange={(val) => dispatch({ type: 'set', sidebarShow: val })}
-      style={{ background: "#08085a" }}
     >
       <CSidebarBrand className="d-md-down-none" to="/">
         {/* <CIcon
