@@ -4,7 +4,9 @@ import {
   TheSidebar,
   TheFooter,
   TheHeader
-} from './index'
+} from './index';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TheLayout = () => {
 
@@ -18,6 +20,7 @@ const TheLayout = () => {
         </div>
         <TheFooter />
       </div>
+      <ToastContainer />
     </div>
   )
 }

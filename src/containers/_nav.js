@@ -1,7 +1,7 @@
 export default [
   {
     _tag: 'CSidebarNavItem',
-    name: 'Dashboard',
+    name: 'Thống kê',
     to: '/dashboard',
     icon: 'cil-speedometer'
   },

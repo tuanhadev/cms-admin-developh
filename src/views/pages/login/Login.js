@@ -68,8 +68,8 @@ const Login = () => {
               <CCard className="p-4">
                 <CCardBody>
                   <CForm>
-                    <h1>Login</h1>
-                    <p className="text-muted">Sign In to your account</p>
+                    <h1>Đăng nhập</h1>
+                    <p className="text-muted">Đăng nhập với tài khoản của bạn</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupPrepend>
                         <CInputGroupText>
@@ -89,7 +89,7 @@ const Login = () => {
                     <CRow>
                       <CCol xs="6">
                         {
-                          loading ? <CButton style={{ backgroundColor: "#0a0858" }} disabled={loading} className="px-4 text-white">...Loading</CButton> : <CButton style={{ backgroundColor: "#0a0858" }} onClick={login} className="px-4 text-white">Login</CButton>
+                          loading ? <CButton style={{ backgroundColor: "#0a0858" }} disabled={loading} className="px-4 text-white">...Loading</CButton> : <CButton style={{ backgroundColor: "#0a0858" }} onClick={login} className="px-4 text-white">Đăng nhập</CButton>
                         }
                       </CCol>
                       <CCol xs="12" className="text-left">

@@ -43,14 +43,14 @@ const TheHeaderDropdown = () => {
           color="light"
           className="text-center"
         >
-          <strong>Account</strong>
+          <strong>Tài khoản</strong>
         </CDropdownItem>
         <CDropdownItem>
-          <CIcon name="cil-user" className="mfe-2" />Profile
+          <CIcon name="cil-user" className="mfe-2" />Setting
         </CDropdownItem>
         <CDropdownItem onClick={() => setModal(true)}>
           <CIcon name="cil-lock-locked" className="mfe-2" />
-          Logout
+          Đăng xuất
         </CDropdownItem>
       </CDropdownMenu>
       <CModal
@@ -58,17 +58,17 @@ const TheHeaderDropdown = () => {
         onClose={setModal}
       >
         <CModalHeader closeButton>
-          <CModalTitle>Logout</CModalTitle>
+          <CModalTitle>Đăng xuất</CModalTitle>
         </CModalHeader>
         <CModalBody>
-          Do you want to log out.
+          Bạn chắc chắn muốn đăng xuất ?
         </CModalBody>
         <CModalFooter>
-          <CButton color="primary" onClick={() => logOut()}>Log out</CButton>{' '}
+          <CButton color="primary" onClick={() => logOut()}>Đồng ý</CButton>{' '}
           <CButton
             color="secondary"
             onClick={() => setModal(false)}
-          >Cancel</CButton>
+          >Huỷ</CButton>
         </CModalFooter>
       </CModal>
     </CDropdown>

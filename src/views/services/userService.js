@@ -18,4 +18,20 @@ export default class ManagerService {
 		)
 		return response;
 	}
+
+	static async createManager(data) {
+		const response = await requestManager.getInstance().startRequest(config.METHOD.POST,
+			`${config.domain}/api/users/create`,
+			data
+		)
+		return response;
+	}
+
+	static async banManager(username) {
+		const response = await requestManager.getInstance().startRequest(config.METHOD.DELETE,
+			`${config.domain}/api/users/${username}`,
+			{}
+		)
+		return response;
+	}
 }
