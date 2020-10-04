@@ -47,8 +47,9 @@ const Managers = () => {
     setLoading({ loadingBan: false, loadingGet: true });
     try {
       const response = await managerService.getListManager();
+      const listManager = response.data.users.filter(item => item.role !== "admin");
       if (response && response.data) {
-        const managersData = response.data.users.map((item, idx) => ({ stt: idx + 1, name: item.info.name, username: item.username, email: item.email, phone_number: item.info.phone_number, address: item.info.address, status: (item.active ? "Active" : "Banned"), register_at: moment(item.register_at).local().format('DD/MM/YYYY HH:mm') }));
+        const managersData = listManager.map((item, idx) => ({ stt: idx + 1, name: item.info.name, username: item.username, email: item.email, phone_number: item.info.phone_number, address: item.info.address, status: (item.active ? "Active" : "Banned"), register_at: moment(item.register_at).local().format('DD/MM/YYYY HH:mm') }));
         setManagersData(managersData);
       }
       setLoading({ loadingBan: false, loadingGet: false });
@@ -162,7 +163,7 @@ const Managers = () => {
                                   </h4>
                                   <p className="text-muted">Updated at: {item.register_at}</p>
                                   <Link to={`/managers/${item.username}/update`}>
-                                    <CButton size="sm" color="info">Cập nhật</CButton>
+                                    <CButton disabled={true} size="sm" color="info">Cập nhật</CButton>
                                   </Link>
                                   {item.status === "Active" ? <CButton disabled={loading.loadingBan} onClick={() => openModalBan(true, item.username, true)} size="sm" color="danger" className="ml-1">
                                     {loading.loadingBan ? "...Loading" : "Cấm hoạt động"}
