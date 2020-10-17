@@ -1,0 +1,2 @@
+(this["webpackJsonpcms-admin-developh"]=this["webpackJsonpcms-admin-developh"]||[]).push([[24],{684:function(e,n,t){"use strict";t.r(n);var a=t(1),l=t.n(a),c=Object(a.lazy)((function(){return t.e(27).then(t.bind(null,675))}));n.default=function(){return l.a.createElement(l.a.Fragment,null,l.a.createElement(c,null))}}}]);
+//# sourceMappingURL=24.5fb5876a.chunk.js.map
